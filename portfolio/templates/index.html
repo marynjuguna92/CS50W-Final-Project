@@ -1,0 +1,247 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CS50W Final Project | Portfolio</title>
+  <link rel="stylesheet" href="{% static 'styles.css' %}" />
+  <link rel="stylesheet" href="{% static 'styles.css' %}?v=2">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/scrollreveal"></script>
+
+</head>
+<body class="main-bg">
+  
+    <!-- Navigation Bar -->
+    <header class="main-header">
+        <div class="header-container">
+
+          <a href="{% url 'index' %}" class="site-logo-link">
+           <h1 class="site-logo">Jane Njuguna</h1>
+          </a>
+
+          <nav class="navbar">
+            <button class="menu-toggle" id="menu-toggle">
+             <span class="bar"></span>
+             <span class="bar"></span>
+             <span class="bar"></span>
+            </button>
+
+            <ul class="nav-links">
+              <li><a href="{% url 'index' %}#about">About</a></li>
+              <li><a href="{% url 'index' %}#education">Education</a></li>
+              <li><a href="{% url 'index' %}#companies">Partners</a></li>
+              <li><a href="{% url 'contact' %}">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <!-- Sliding Mobile Menu -->
+
+    <div class="mobile-menu" id="mobile-menu">
+      <ul class="mobile-links">
+         <li><a href="{% url 'index' %}#about">About</a></li>
+         <li><a href="{% url 'index' %}#education">Education</a></li>
+         <li><a href="{% url 'index' %}#companies">Partners</a></li>
+         <li><a href="{% url 'contact' %}">Contact</a></li>
+     </ul>
+   </div>
+  </header>
+
+      {% block content %}
+
+      <!-- Main Content -->
+  <!-- Hero Section -->
+
+  <section id="hero" class="section hero-section">
+    <div class="hero-container">
+      <img src="{% static 'images/jane.png' %}" alt="Jane Njuguna" class="hero-image">
+      <div class="hero-text">
+        <h1 class="hero-title">Jane Njuguna</h1>
+        <p class="hero-subtitle">Global Youth Climate & SDG Advocate<br>
+        | Sustainability Influencer | Public Speaker |</p>
+        <p class="hero-tagline">Shaping Diplomacy through Youth Leadership.</p>
+      </div>
+    </div>
+  </section>
+
+  
+  <!-- About Section -->
+
+<section id="about" class="section about-section">
+  <h2 class="section-title">About Me</h2>
+
+  <div class="slider-container">
+    <div class="slider-wrapper"> 
+   
+    <div class="about-slider" id="aboutSlider">
+
+      <!-- Diplomacy Card -->
+
+      <div class="about-card" tabindex="0">
+        <div class="card-thumbnail">
+          <img src="{% static 'images/diplomacy.jpg' %}" alt="Diplomacy" />
+        </div>
+
+        <div class="card-header">
+          <h3 class="card-title">Diplomacy</h3>
+        </div>
+        <div class="card-content">
+          <p>
+            Jane Njuguna is a powerful global voice for youth inclusion, climate action, global health, and sustainable development.
+            She is a trained climate negotiator, an experienced public speaker, and a sustainability influencer passionate about driving
+            real-world impact through diplomacy, storytelling, and youth-led innovation.
+          </p>
+          <p>
+            She has worked with the Ministry of Foreign and Diaspora Affairs (MFDA) of Kenya, contributing to bilateral diplomacy
+            initiatives including the planning of Kenya’s historic state visit to the United States, the first by a sitting African
+            president since 2008.
+          </p>
+        </div>
+        <div class="card-corner"></div>
+      </div>
+
+      <!-- Climate Leadership Card -->
+
+      <div class="about-card" tabindex="0">
+        <div class="card-thumbnail">
+          <img src="{% static 'images/climate.jpg' %}" alt="Climate Leadership" />
+        </div>
+        <div class="card-header">
+          <h3 class="card-title">Climate Leadership</h3>
+        </div>
+        <div class="card-content">
+          <p>
+            Jane is actively engaged in multilateral spaces, having participated in the UNDP Climate Security Academy, where she explored
+            the intersections of climate, peace, and youth-led action. Her training also includes the Climate Governance, Diplomacy,
+            Leadership, and Negotiations Programme by the African Group of Negotiators Experts Support (AGNES) and UNICEF’s Introduction
+            to Thinking and Working Politically course.
+          </p>
+          <p>
+            Additionally, Jane completed the Global Health course by One Young World and the Bill & Melinda Gates Foundation, deepening
+            her understanding of health equity, development systems, and the links between public health and the climate crisis.
+          </p>
+        </div>
+        <div class="card-corner"></div>
+      </div>
+
+      <!-- Public Speaking Card -->
+
+      <div class="about-card" tabindex="0">
+        <div class="card-thumbnail">
+          <img src="{% static 'images/janeABT.jpg' %}" alt="Public Speaking" />
+        </div>
+        <div class="card-header">
+          <h3 class="card-title">Public Speaking</h3>
+        </div>
+        <div class="card-content">
+          <p>
+            As a public speaker, Jane delivers talks on international platforms from United Nations side events to youth summits using her
+            voice to spotlight marginalized issues and inspire inclusive solutions. As a sustainability influencer, she harnesses the power
+            of digital advocacy to promote climate resilience, mental well-being, and gender equity.
+          </p>
+        </div>
+        <div class="card-corner"></div>
+      </div>
+
+      <!-- Innovation & Youth Card -->
+
+      <div class="about-card" tabindex="0">
+        <div class="card-thumbnail">
+          <img src="{% static 'images/partnership.jpg' %}" alt="Innovation & Youth" />
+        </div>
+        <div class="card-header">
+          <h3 class="card-title">Innovation & Youth</h3>
+        </div>
+        <div class="card-content">
+          <p>
+            Jane actively collaborates with organizations, institutions, and movements committed to accelerating the SDGs and building a
+            just, climate-resilient future. She is always open to partnerships that prioritize inclusion, innovation, and action, believing
+            that sustainable development can only be achieved through meaningful cooperation and shared vision.
+          </p>
+          <p>
+            Driven by faith, grounded in service, and fueled by purpose, Jane continues to champion a future where young people are not
+            only heard but are shaping the policies, systems, and conversations that define our world.
+          </p>
+        </div>
+        <div class="card-corner"></div>
+      </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- Education/Training Section -->
+
+  <section id="education" class="section education-section">
+    <h2 class="section-title">Education & Training</h2>
+    <ul class="education-list">
+      <li>Bachelor's Degree - DayStar University - Present (Interanational Relations and Security Studies)</li>  
+      <li>Climate Governance, Diplomacy, Leadership and Negotiations Programme - African Group of Negotiators Experts Support (AGNES)</li>
+      <li>UNDP Climate Security Academy - United Nations Development Programme</li>
+      <li>Introduction to Thinking and Working Politically - UNICEF</li>
+      <li>Global Health Course - One Young World and Bill & Melinda Gates Foundation</li>
+      <li>Public Speaking and Advocacy Training - Various Workshops and Conferences</li>
+      <li>Climate Negotiation Training - Various International Forums</li>
+      <li>Associate Degree - DayStar University (International Relations)</li>
+    </ul>
+  </section>
+
+  <!-- Companies Section -->
+
+  <section id="companies" class="section companies-section">
+    <div class="companies-container">
+    <h2 class="section-title">Companies I’ve Worked With</h2>
+    <div class="logo-grid">
+
+      <!-- company logos below -->
+
+      <img src="{% static 'images/MFA logo.jpg' %}" alt="Ministry of Foreign and Diaspora Affairs" class="company-logo" />
+      <img src="{% static 'images/UNDP.jpg' %}" alt="UNDP Logo" class="company-logo" />
+      <img src="{% static 'images/Gayo logo.jpg' %}" alt="Gayo Logo" class="company-logo" />
+      <img src="{% static 'images/TW logo.jpg' %}" alt="Their world Logo" class="company-logo" />
+      <img src="{% static 'images/AIP logo.jpg' %}" alt="Association For Intersex People Logo" class="company-logo" />
+      <img src="{% static 'images/GPA logo.jpg' %}" alt="Green Peace Africa Logo" class="company-logo" />
+      <img src="{% static 'images/Agnes.jpg' %}" alt="Agnes Logo" class="company-logo" />
+    </div>
+    </div>
+  </section>
+
+  {% endblock %}
+  
+  <!-- Footer -->
+
+  <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-links">
+        <h4>Connect With Me</h4>
+        <div class="social-links">
+         <a href="https://www.linkedin.com/in/jane-njugunah-5a112a217?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+             target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+         <a href="https://www.instagram.com/jane_njugunah?igsh=MXcxcnI2MTN0YWRINg==" target="_blank"><i class="fab fa-instagram"></i></a>
+         <a href="https://x.com/itsjanenjugunah?t=vjWNiTXg5jPcMRFqytdvtQ&s=09" target="_blank"><i class="fab fa-x"></i></a>
+         <a href="https://www.facebook.com/janenjugunaah" target="_blank"><i class="fab fa-facebook"></i></a>
+         <a href="https://bsky.app/profile/janenjugunah.bsky.social" target="_blank"><i class="fa-solid fa-cloud"></i></a>
+          </div>
+        </div>
+        
+      <div class="footer-credit">
+        <p class="footer-credit">Designed by <a href="https://www.linkedin.com/in/mary-njuguna-101145371/">Mary Njuguna</a></p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+   
+  <a href="#" class="back-to-top" id="backToTop">
+    ↑ Top
+  </a>
+
+  <script src="{% static 'script.js' %}"></script>
+
+  </body>
+
+</html>

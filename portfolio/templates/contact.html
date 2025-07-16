@@ -1,0 +1,29 @@
+{% extends "index.html" %}
+{% load static %}
+
+{% block content %}
+<div class="contact-text">   
+  <p>If you have any questions or would like to get in touch please fill out the form below:</p>
+</div>
+
+<section class="contact-section">
+  <div class="contact-heading">
+  <h2 class="contact-section">Contact Me</h2>
+  </div>
+  
+  {% if success %}
+    <p style="color: green;">Your message has been sent successfully!</p>
+  {% endif %}
+  {% if form.errors %}
+    <p style="color: red;">Please correct the errors below:</p>
+  {% endif %}
+
+  <div class="contact-form">
+  <form method="post" class="contact-form">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Send Message</button>
+  </form>
+</div>
+</section>
+{% endblock %}
