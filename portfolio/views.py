@@ -27,43 +27,10 @@ def contact(request):
             recipient_list=[settings.DEFAULT_TO_EMAIL],
             fail_silently=False,
         )
-        success = True
-        form = ContactForm()
-    return render(request, "contact.html", {
-        'form': form,
-        'success': success
-    })
-
-from .models import ContactMessage  # Import the model
-
-def contact(request):
-    form = ContactForm(request.POST or None)
-    success = False
-
-    if request.method == "POST" and form.is_valid():
-        name = form.cleaned_data['name']
-        email = form.cleaned_data['email']
-        message = form.cleaned_data['message']
-
-        # Save to database
-        ContactMessage.objects.create(
-            name=name,
-            email=email,
-            message=message
-        )
-
-        # Send email (optional for now)
-        send_mail(
-            subject=f"Contact Form Submission from {name}",
-            message=message,
-            from_email=settings.DEFAULT_FROM_EMAIL,
-            recipient_list=[settings.DEFAULT_FROM_EMAIL],
-            fail_silently=False,
-        )
+        ContactMessage.objects.create(name=name, email=email, message=message)
 
         success = True
         form = ContactForm()
-
     return render(request, "contact.html", {
         'form': form,
         'success': success
