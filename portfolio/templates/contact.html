@@ -12,10 +12,14 @@
   </div>
   
   {% if success %}
+  <div class="success">
     <p style="color: green;">Your message has been sent successfully!</p>
-  {% endif %}
+    </div>
+    {% endif %}
   {% if form.errors %}
+  <div class="error">
     <p style="color: red;">Please correct the errors below:</p>
+  </div>
   {% endif %}
 
   <div class="contact-form">
